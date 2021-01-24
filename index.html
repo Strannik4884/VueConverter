@@ -1,12 +1,38 @@
 <!DOCTYPE html>
 <html lang="ru">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Конвертер</title>
-        <link rel="icon" href="favicon.ico" />
-        <link rel="stylesheet" href="styles.css" />
-    </head>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Конвертер</title>
+    <link rel="icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="styles.css"/>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
     <body>
+        <div class="container pt-5" id="app" v-cloak>
+            <div class="card center">
+                <h1>Конвертер</h1>
+                <ul class="list">
+                    <li class="list-item">
+                        Футы: <input class="converter-input" type="text" v-model="feets"/> = {{ feetsToMeters }} м (метры)
+                    </li>
+                    <li class="list-item">
+                        Морские мили: <input class="converter-input" type="text" v-model="seaMile"/> = {{ seaMileToKm }} км (километры)
+                    </li>
+                    <li class="list-item">
+                        Градусы: <input class="converter-input" type="text" v-model="degrees"/> = {{ degreesToRadians }} рад (радиан)
+                    </li>
+                    <li class="list-item">
+                        Цельсий: <input class="converter-input" type="text" v-model="celsius"/> = {{ celsiusToFahrenheit }} °F (Фаренгейт)
+                    </li>
+                </ul>
+            </div>
+        </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="app.js"></script>
     </body>
 </html>
